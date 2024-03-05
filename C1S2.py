@@ -11,9 +11,7 @@ def xor_buffers(buffer1_hex_string, buffer2_hex_string):
 
     # hex string > bytes
     buffer1_rawb = binascii.unhexlify(buffer1_hex_string)
-    print(buffer1_rawb)
     buffer2_rawb = binascii.unhexlify(buffer2_hex_string)
-    print(buffer2_rawb)
 
     # Check buffer length
     if len(buffer1_rawb) != len(buffer2_rawb):
@@ -21,7 +19,6 @@ def xor_buffers(buffer1_hex_string, buffer2_hex_string):
 
     # XOR the two buffers by iterate through tuples
     xor_rawb = bytes(x ^ y for x, y in zip(buffer1_rawb, buffer2_rawb))
-    print(xor_rawb)
 
     # bytes > hex string
     xor_hex_string = binascii.hexlify(xor_rawb).decode('utf-8')
