@@ -6,7 +6,7 @@ def encrypting(text, key):
   textBytes = text.encode()
   keyBytes = key.encode()
   encryptedBytes = bytes([textBytes[i] ^ keyBytes[i % len(keyBytes)] for i in range(len(textBytes))])
-  return hexlify(encryptedBytes).decode("utf-8")
+  return hexlify(encryptedBytes).decode()
 
 encryptedText = encrypting(text, key)
 print(encryptedText)
