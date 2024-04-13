@@ -12,6 +12,7 @@ def main():
     key = b'YELLOW SUBMARINE' # key was given
     decryptedData = decryptAESECB(encryptedData, key) # Use given data that has been Base64 decoded and given key
     print(decryptedData.decode('utf-8'))
+    assert "Play that funky music" in str(decryptedData), "Failed to decrypt the data" # Test the result since we now know part of the decrypted data.
 
 if __name__ == "__main__":
     main()
